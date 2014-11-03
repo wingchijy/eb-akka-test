@@ -29,7 +29,7 @@ public class ProduceWorker extends UntypedActor
                         content.split("\\|")[0], content.split("\\|")[1], content.length(), duration);
 
                 System.out.println(
-                        String.format("%s produce-task: [%s]", getSelf(), result) );
+                        String.format("%s produce-task to %s: [%s]", getSelf(), getSender(), result) );
 
                 getSender().tell( new ProduceResult(result), getSelf() );
             }
